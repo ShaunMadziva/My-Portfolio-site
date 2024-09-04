@@ -2,11 +2,11 @@ const Portfolio = (function () {
   function makeWords() {
     var words = [
       {
-        text: "Git",
+        text: "Troubleshooting",
         weight: 12,
       },
       {
-        text: "CSS",
+        text: "API's",
         weight: 6,
       },
       {
@@ -23,11 +23,11 @@ const Portfolio = (function () {
       },
       {
         text: "Python",
-        weight: 13,
+        weight: 8,
       },
       {
-        text: "flask",
-        weight: 8,
+        text: "JavaScript",
+        weight: 13,
       },
       {
         text: "HTML",
