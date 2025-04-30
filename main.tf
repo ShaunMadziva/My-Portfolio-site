@@ -1,15 +1,13 @@
 provider "aws" {
-  region = "us-east-1"  # or your preferred region
+  region = "eu-west-2"  # or your preferred region
 }
 
 resource "aws_s3_bucket" "portfolio" {
   bucket = "my-portfolio-site-bucket"  # must be globally unique
-  acl    = "public-read"
+  # acl is deprecated; use bucket policy for public access
+  # Access control is handled by the aws_s3_bucket_policy resource
 
-  website {
-    index_document = "index.html"
-    error_document = "index.html"
-  }
+  # Website configuration is now handled in the aws_s3_bucket_website_configuration resource
 }
 
 resource "aws_s3_bucket_policy" "allow_public_access" {
