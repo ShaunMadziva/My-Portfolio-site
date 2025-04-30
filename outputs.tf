@@ -1,3 +1,3 @@
 output "website_url" {
-  value = aws_s3_bucket.portfolio.website_endpoint
+  value = aws_s3_bucket.portfolio.bucket_domain_name
 }
