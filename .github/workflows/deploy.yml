@@ -3,7 +3,7 @@ name: Deploy Static Site to S3
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
@@ -18,7 +18,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: eu-west-2  # Update if you're using another region
+          aws-region: eu-west-2 # Update if you're using another region
 
       - name: Sync files to S3
         run: aws s3 sync . s3://shaun-portfolio-site --delete --acl public-read --exclude ".git/*" --exclude ".github/*"
