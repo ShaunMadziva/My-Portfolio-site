@@ -1,3 +1,3 @@
 output "website_url" {
-  value = aws_s3_bucket.portfolio.bucket_domain_name
+value = "https://${aws_s3_bucket.portfolio.bucket}.s3.${aws_s3_bucket.portfolio.region}.amazonaws.com/index.html"
 }
