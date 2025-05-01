@@ -21,4 +21,4 @@ jobs:
           aws-region: eu-west-2 # Update if you're using another region
 
       - name: Sync files to S3
-        run: aws s3 sync . s3://shaun-portfolio-site --delete --acl public-read --exclude ".git/*" --exclude ".github/*"
+        run: aws s3 sync . s3://shaun-portfolio-site --delete --exclude ".git/*" --exclude ".github/*"
