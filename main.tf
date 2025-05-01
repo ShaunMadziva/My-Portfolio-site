@@ -3,11 +3,20 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "portfolio" {
-  bucket = "my-portfolio-site-bucket"  # must be globally unique
+  bucket = "shaun-portfolio-site"  # must be globally unique
   # acl is deprecated; use bucket policy for public access
   # Access control is handled by the aws_s3_bucket_policy resource
 
   # Website configuration is now handled in the aws_s3_bucket_website_configuration resource
+}
+
+resource "aws_s3_bucket_public_access_block" "allow_public_policy" {
+  bucket = aws_s3_bucket.portfolio.id
+
+  block_public_acls       = false
+  block_public_policy     = false
+  ignore_public_acls      = false
+  restrict_public_buckets = false
 }
 
 resource "aws_s3_bucket_policy" "allow_public_access" {
